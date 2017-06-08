@@ -1,0 +1,132 @@
+/* Variables */
+$blue: #5bb7db;
+$light-blue: #aacddb;
+$grey: #ccc;
+$black: #000;
+$white: #fff;
+$black-40: lighten($black, 40%);
+$black-60: lighten($black, 60%);
+$black-70: lighten($black, 70%);
+$black-80: lighten($black, 80%);
+$black-90: lighten($black, 90%);
+$black-98: lighten($black, 98%);
+/* Styles */
+body {
+  font: 16px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  line-height: 1.4rem;
+  min-width: 14rem;
+  max-width: 90rem;
+  margin: 0 auto;
+  padding: 1rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  font-weight: 300;
+}
+
+h1 {
+	color: $blue;
+}
+
+a {
+  text-decoration: none;
+  color: $blue;
+}
+
+h3 {
+  color: $black-40;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+//Movies
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+}
+
+.movie {
+  flex-basis: 100%;
+
+  @media screen and (min-width: 64rem) {
+    flex-basis: 50%;
+    flex-grow: 1;
+  }
+}
+
+.movie__content {
+  display: flex;
+  margin: .5rem;
+  height: calc(100% - 1rem);
+  background-color: $black-98;
+  border: solid 1px $black-80;
+  box-shadow: $black-60 0px 2px 3px;
+}
+
+.movie__poster {
+  flex-basis: 50%;
+  text-align: center;
+  padding: 1rem;
+  background-color: $black-90;
+  border-right: 1px solid $black-80;
+  img {
+    height: 10rem;
+    box-shadow: $black-40 0px 1px 5px;
+  }
+}
+
+.movie__details {
+  flex-basis: 50%;
+  padding: 2rem;
+  margin: auto;
+}
+
+//Pagination
+.pagination {
+  padding: 0;
+
+  li {
+    display: inline-block;
+    margin: 0 .1rem;
+    
+    background-color: $black-90;
+    border-radius: .3rem;
+
+    a {
+      color: $black;
+      display: inline-block;
+      padding: .4rem .5rem;
+      cursor: pointer;
+    }
+
+    &.break {
+      padding: .4rem .5rem;
+    }
+
+    &.selected {
+      background-color: $blue;
+      font-weight: bold;
+
+      a {
+        color: $white;
+      }
+    }
+
+    &:hover {
+      background-color: $light-blue;
+      color: $white;
+      font-weight: bold;
+    }
+  }
+}
+
+//Search
+.search__input {
+  width: 15rem;
+  padding: .5rem;
+  font-size: 1rem;
+}
